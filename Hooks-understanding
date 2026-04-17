@@ -1,0 +1,134 @@
+import { useMemo, useState, memo , useCallback} from 'react'
+
+import './App.css'
+
+
+// function App() {
+
+  // WITHOUT USEMEMO
+
+  // const [count, setCount] = useState(0)
+  // const d = function heavyval(){
+  //   console.log("i am rendering now!")
+  //   return 10;
+  // }
+  // return (
+  //   <>
+  //     <button onClick={()=>setCount(count+2)}>Click {count}</button>
+  //     <p>{d()}</p>
+  //   </>
+  // )
+
+  // WITH USEMEMO
+
+  // const [count, setCount] = useState(0)
+  // const d = useMemo(() =>{
+  //   console.log("i am rendering now!")
+  //   return 10;
+  // },[]);
+  // return (
+  //   <>
+  //     <button onClick={()=>setCount(count+2)}>Click {count}</button>
+  //     <p>{d}</p>
+  //   </>
+  // )
+
+  // Without React.memo
+  
+//   const [count, setCount] = useState(0);
+
+//   return (
+//     <>
+//       <button onClick={() => setCount(count + 1)}>Increase</button>
+//       <Child name="Binay" />
+//     </>
+//   );
+
+// }
+// function Child({name}){
+//   
+//      console.log("hi i am rendering!")
+//  
+//   return(
+//     <>
+//     <h3>HI my name is {name} {check()}</h3>
+//     </>
+//   )
+
+//  const [count, setCount] = useState(0);
+
+//   return (
+//     <>
+//       <button onClick={() => setCount(count + 1)}>Increase</button>
+//       <Child name="Binay" />
+//     </>
+//   );
+
+// }
+// const Child = memo(({name}) => {
+//   console.log("hi iam rendeering!")
+//   return(
+//     <>
+//     <h3>HI my name is {name}</h3>
+//     </>
+//   )
+// });
+
+// WITHOUT USEMEMO AND USECALLBACK
+
+// function App() {
+//   const [count, setCount] = useState(0);
+
+//   const numbers = [1, 2, 3]; // new array every render ❌
+
+//   const handleClick = () => {
+//     console.log("Clicked"); // new function every render ❌
+//   };
+
+//   return (
+//     <>
+//       <button onClick={() => setCount(count + 1)}>Re-render {count}</button>
+//       <Child numbers={numbers} onClick={handleClick} />
+//     </>
+//   );
+// }
+
+
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  // useMemo → memoize VALUE
+  const numbers = useMemo(() => {
+    return [1, 2, 3];
+  }, []);
+
+  // useCallback → memoize FUNCTION
+  const handleClick = useCallback(() => {
+    console.log("Clicked");
+  }, []);
+
+  return (
+    <>
+      <button onClick={() => setCount(count + 1)}>Re-render</button>
+      <Child numbers={numbers} onClick={handleClick} />
+    </>
+  );
+}
+
+
+const Child = memo(({ numbers, onClick }) => {
+  console.log("Child rendered");
+
+  return (
+    <div>
+      <p>Numbers: {numbers.join(", ")}</p>
+      <button onClick={onClick}>Click Me</button>
+    </div>
+  );
+});
+
+
+
+
+export default App
