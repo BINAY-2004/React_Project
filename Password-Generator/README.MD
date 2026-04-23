@@ -3,7 +3,7 @@
 A modern and responsive **Password Generator** built using React and Tailwind CSS.  
 Designed with a **hacker-style UI**, this app allows users to generate secure passwords with customizable options.
 
----
+![Preview](https://github.com/BINAY-2004/React_Project/blob/7e605b6e42708ff342e8c9ec4e7a9955e2a04094/Password-Generator/password.png)
 
 ## 🚀 Features
 
@@ -49,17 +49,3 @@ Using useCallback for optimization
 Using useRef for DOM interaction
 Dynamic styling with Tailwind + inline styles
 
-
-⚙️ Installation & Setup
-
-# Clone the repository
-git clone "https://github.com/BINAY-2004/React_Project/edit/main/Password-Generator"
-
-# Navigate to project
-cd Password-Generator
-
-# Install dependencies
-npm install
-
-# Run the app
-npm run dev
