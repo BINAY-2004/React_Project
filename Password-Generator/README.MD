@@ -42,10 +42,6 @@ Designed with a **hacker-style UI**, this app allows users to generate secure pa
   - Numbers (0–9)
   - Special characters (!@#$%^&*)
 
-Password is generated using:
-```js
-Math.random()
-
 📌 Learnings
 Controlled components in React (value vs checked)
 Handling form inputs
@@ -54,9 +50,9 @@ Using useRef for DOM interaction
 Dynamic styling with Tailwind + inline styles
 
 
-				⚙️ Installation & Setup
+⚙️ Installation & Setup
 
-	# Clone the repository
+# Clone the repository
 git clone "https://github.com/BINAY-2004/React_Project/edit/main/Password-Generator"
 
 # Navigate to project
